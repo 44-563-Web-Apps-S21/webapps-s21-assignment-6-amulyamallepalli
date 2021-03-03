@@ -23,22 +23,26 @@
 <p id="result">The result will be displayed here</p>
 
 <form>
-    <input type="radio" id="rg_plus" name="plus" value="plus">
+    <input type="radio" id="rg_plus" name="plus" 
+     value="plus" onclick="processRadio()">
     <label for="rg_plus">+</label></br>
   
     <input type="radio" id="rg_minus" name="minus" 
-       value="minus" onclick="resolveRadio()">
+       value="minus" onclick="processRadio()">
     <label for="rg_minus">-</label></br>
   
     <input type="radio" id="rg_times" name="times"   
-       value="times" onclick="resolveRadio()">
+       value="times" onclick="processRadio()">
     <label for="rg_times">*</label></br>
 
     <input type="radio" id="rg_divide" name="divide"   
-       value="divide" onclick="resolveRadio()">
+       value="divide" onclick="procesRadio()">
     <label for="rg_divide">/</label></br>
 
-    <input type="button" onclick="resolveRadio()" value="Get values from radio group">
+</form>
+
+<p id="result2">The result displays here</p>
+
   </form>
 
 <script> 
@@ -57,7 +61,7 @@ function permutations (){
     
 }
 
-function resolveRadio() {
+function processRadio() {
     console.log("Getting input")
     firstnumber = document.getElementById("first_number").value
     secondnumber = document.getElementById("second_number").value
@@ -66,16 +70,16 @@ function resolveRadio() {
     times = document.getElementById("rg1_times").checked
     divide = document.getElementById("rg1_divide").checked
     if (plus) {
-                document.getElementById("arithmeic").innerHTML = (Number)(firstnumber) + Number(secondnumber)
+                document.getElementById("result2").innerHTML = (Number)(firstnumber) + Number(secondnumber)
             }
             if (minus) {
-                document.getElementById("arithmeic").innerHTML = firstnumber - secondnumber
+                document.getElementById("result2").innerHTML = firstnumber - secondnumber
             }
             if (times) {
-                document.getElementById("arithmeic").innerHTML = firstnumber * secondnumber
+                document.getElementById("result2").innerHTML = firstnumber * secondnumber
             }
             if (divide) {
-                document.getElementById("arithmeic").innerHTML = firstnumber / secondnumber
+                document.getElementById("result2").innerHTML = firstnumber / secondnumber
             }
 }
 
