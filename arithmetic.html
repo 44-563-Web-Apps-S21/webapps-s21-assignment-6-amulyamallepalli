@@ -22,6 +22,25 @@
 
 <p id="result">The result will be displayed here</p>
 
+<form>
+    <input type="radio" id="rg_plus" name="plus" value="plus">
+    <label for="rg_plus">+</label></br>
+  
+    <input type="radio" id="rg_minus" name="minus" 
+       value="minus" onclick="resolveRadio()">
+    <label for="rg_minus">-</label></br>
+  
+    <input type="radio" id="rg_times" name="times"   
+       value="times" onclick="resolveRadio()">
+    <label for="rg_times">*</label></br>
+
+    <input type="radio" id="rg_divide" name="divide"   
+       value="divide" onclick="resolveRadio()">
+    <label for="rg_divide">/</label></br>
+
+    <input type="button" onclick="resolveRadio()" value="Get values from radio group">
+  </form>
+
 <script> 
 
 function permutations (){
@@ -37,6 +56,29 @@ function permutations (){
     
     
 }
+
+function resolveRadio() {
+    console.log("Getting input")
+    firstnumber = document.getElementById("first_number").value
+    secondnumber = document.getElementById("second_number").value
+    plus = document.getElementById("rg1_plus").checked
+    minus = document.getElementById("rg1_minus").checked
+    times = document.getElementById("rg1_times").checked
+    divide = document.getElementById("rg1_divide").checked
+    if (plus) {
+                document.getElementById("arithmeic").innerHTML = (Number)(firstnumber) + Number(secondnumber)
+            }
+            if (minus) {
+                document.getElementById("arithmeic").innerHTML = firstnumber - secondnumber
+            }
+            if (times) {
+                document.getElementById("arithmeic").innerHTML = firstnumber * secondnumber
+            }
+            if (divide) {
+                document.getElementById("arithmeic").innerHTML = firstnumber / secondnumber
+            }
+}
+
 </script>
 
 </body>
