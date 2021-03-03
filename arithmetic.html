@@ -10,77 +10,71 @@
 <h2>Amulya Mallepalli computes</h2>
 
 <form>
-    <label for="first_number">Enter a number </label>
-    <input type ="number" id="first_number" name="first_number" value=10> <br>
+    <label for="first_number">Enter a number</label>
+    <input type ="number" id="first_number" name="first_number"  value=10> <br>
 
-    <label for="second_number">Enter a number </label>
+    <label for="second_number">Enter a number</label>
     <input type ="number" id="second_number" name="second_number" value=2> <br>
 
     <input type="button" onclick="permutations()" value="Compute">
 </form>
 
 
-<p id="result">The result will be displayed here</p>
+<p id="result">Results will be displayed here</p>
 
 <form>
-    <input type="radio" id="rg_plus" name="plus" 
-     value="plus" onclick="processRadio()">
-    <label for="rg_plus">+</label></br>
+    <input type="radio" id="plus" name="calc" onclick="processRadio()" value="plus">
+    <label for="plus">+</label></br>
   
-    <input type="radio" id="rg_minus" name="minus" 
-       value="minus" onclick="processRadio()">
-    <label for="rg_minus">-</label></br>
-  
-    <input type="radio" id="rg_times" name="times"   
-       value="times" onclick="processRadio()">
-    <label for="rg_times">*</label></br>
+    <input type="radio" id="minus" name="calc" onclick="processRadio()" value="minus">
+    <label for="minus">-</label></br>
 
-    <input type="radio" id="rg_divide" name="divide"   
-       value="divide" onclick="procesRadio()">
-    <label for="rg_divide">/</label></br>
+    <input type="radio" id="times" name="calc" onclick="processRadio()" value="times">
+    <label for="times">*</label></br>
 
-</form>
+    <input type="radio" id="divide" name="calc" onclick="processRadio()" value="divide">
+    <label for="divide">/</label></br>
+  </form>
 
-<p id="result1">The result displays here</p>
+  <p id="result2">Results will be displayed here</p>
 
-  
 
 <script> 
-
-function permutations (){
-    firstnumber = document.getElementById("first_number").value
-    secondnumber = document.getElementById("second_number").value
-    let product = 1;
-    for (let i = firstnumber; i >= firstnumber - secondnumber+ 1; i--) {
-                product *= i;
-    }
-    out = document.getElementById("result")
-    out.innerHTML = firstnumber+" permute "+secondnumber+" is "+product
+    function permutations(){
+        firstnumber = document.getElementById("first_number").value
+        secondnumber = document.getElementById("second_number").value
+        var product = 1;
+        let i=firstnumber;
+        do{
+            product *=i;
+            i--
+        }while(i>=(firstnumber-secondnumber+1))
+        out = document.getElementById("result")
+        out.innerHTML = firstnumber+" permute "+secondnumber+" is "+product
+        }
     
+    function processRadio(){
+        firstnumber = document.getElementById("first_number").value
+        secondnumber = document.getElementById("second_number").value
+
+        firstnumber=(Number)(firstnumber);
+        secondnumber=(Number)(secondnumber);
+
+        if(document.getElementById("plus").checked){
+            firstnumber += secondnumber;
     
-}
-
-function processRadio() {
-    firstnumber = document.getElementById("first_number").value
-    secondnumber = document.getElementById("second_number").value
-    plus = document.getElementById("rg_plus").checked
-    minus = document.getElementById("rg_minus").checked
-    times = document.getElementById("rg_times").checked
-    divide = document.getElementById("rg_divide").checked
-    if (plus) {
-                document.getElementById("result1").innerHTML = (Number)(firstnumber) + Number(secondnumber)
-            }
-            if (minus) {
-                document.getElementById("result1").innerHTML = firstnumber - secondnumber
-            }
-            if (times) {
-                document.getElementById("result1").innerHTML = firstnumber * secondnumber
-            }
-            if (divide) {
-                document.getElementById("result1").innerHTML = firstnumber / secondnumber
-            }
-}
-
+        }else if(document.getElementById("minus").checked){
+            firstnumber-=secondnumber;
+    
+        }else if(document.getElementById("times").checked){
+            firstnumber *= secondnumber;
+    
+        }else{
+            firstnumber /= secondnumber;
+        }
+        out = document.getElementById("result2")
+        out.innerHTML = firstnumber
+        }
 </script>
 
 </body>
