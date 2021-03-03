@@ -29,7 +29,7 @@ function permutations (){
     first_number = document.getElementById("first_number").value
     second_number = document.getElementById("second_number").value
     let product = 1;
-    for (let i = first; i >= first - second + 1; i--) {
+    for (let i = first_number; i >= first_number - second_number+ 1; i--) {
                 product *= i;
     }
     out = document.getElementById("result")
