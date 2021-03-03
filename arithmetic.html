@@ -26,14 +26,14 @@
 
 function permutations (){
     console.log("Getting form values")
-    first_number = document.getElementById("first_number").value
-    second_number = document.getElementById("second_number").value
+    firstnumber = document.getElementById("first_number").value
+    secondnumber = document.getElementById("second_number").value
     let product = 1;
-    for (let i = first_number; i >= first_number - second_number+ 1; i--) {
+    for (let i = firstnumber; i >= firstnumber - secondnumber+ 1; i--) {
                 product *= i;
     }
     out = document.getElementById("result")
-    out.innerHTML = first_number+" permute "+second_number+" is "+product
+    out.innerHTML = firstnumber+" permute "+secondnumber+" is "+product
     
     
 }
