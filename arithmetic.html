@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+ <head>
+     <title>
+         Arithmetic
+     </title>
+ </head>
+<body>
+
+<h2>Amulya Mallepalli computes</h2>
+
+<form>
+    <label for="first_number">Enter a number </label>
+    <input type ="number" id="first_number" name="first_number" value=10> <br>
+
+    <label for="second_number">Enter a number </label>
+    <input type ="number" id="second_number" name="second_number" value=2> <br>
+
+    <input type="button" onclick="permutations()" value="Compute">
+</form>
+
+
+<p id="result">The result will be displayed here</p>
+
+<script> 
+
+function permutations (){
+    console.log("Getting form values")
+    first_number = document.getElementById("first_number").value
+    second_number = document.getElementById("second_number").value
+    let product = 1;
+    for (let i = first; i >= first - second + 1; i--) {
+                product *= i;
+    
+    out = document.getElementById("result")
+    out.innerHTML = first_number+" permute "+second_number+" is "+product
+    
+    
+}
+</script>
+
+</body>
+</html> 
