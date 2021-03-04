@@ -4,12 +4,19 @@
      <title>
      Bear Page
  </title>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
 
 <h2>Amulya Mallepalli builds a bear</h2>
 
 <form>
+    <div class="form-group">
     <input type="checkbox" id="hat" name="hat"   
       value="hat" >
     <label for="hat">hat</label></br>
@@ -35,7 +42,7 @@
     </br>
 
     <input type="button" onclick="updatebear()" value="Update the bear">
-
+</div>
 </form>
 <p id="result">This text will be replaced </p>
   
